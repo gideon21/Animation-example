@@ -9,7 +9,13 @@ function eventWindowLoad() {
     let width = 100; // Rectangle width
     let height = 330; // Rectangle height
 
-    ///////////////////////////////////////
+    /*
+    For random colours
+    Reference: https://css-tricks.com/snippets/javascript/random-hex-color/
+    
+    Moving shape
+    Reference: https://codepen.io/flipper/pen/wGQmgy
+    */
     
     // Animation logic
     function logic() {
@@ -23,10 +29,7 @@ function eventWindowLoad() {
         if (x + y < c.width - width) {
             requestAnimationFrame(drawRec);
         }
-
-
         // Start animation loop
-        
         for (let i = 0; i < 4; i++) {
 
             if (x + y < c.width - width) {
@@ -42,7 +45,6 @@ function eventWindowLoad() {
         }
 
     }
-
     // Draw rectangle
     function drawRec() {
 
@@ -50,12 +52,12 @@ function eventWindowLoad() {
         ctx.fillRect(x, y, width, height);
         ctx.fillStyle = color;
         ctx.fill();
-
-
     }
     // Execute animation
     requestAnimationFrame(drawRec);
     setInterval(logic, 2500 / 60); // delay/speed or frames
+    
+    
     /////////////////////////////////
     
     // Show random colors
@@ -79,32 +81,3 @@ function eventWindowLoad() {
     }
 
 };
-
-
-
-
-/* 
-
-else {
-        ctx.fillRect(10, 10, width, height);
-        ctx.fillStyle = '#';
-        ctx.fill();
-        }
-
- function newLogic(){
-        x += 0;
-        y += 0;
-        
-        if (x + y < c.width - width ) {
-            requestAnimationFrame(drawRec);
-        }
-    
-    function drawRec() {
-        ctx.fillRect(x, y, width, height);
-        ctx.fill();
-    }
-    requestAnimationFrame(drawRec);
-    setInterval(newLogic, 2500 / 50); // delay/speed
-    
-    }
-*/
